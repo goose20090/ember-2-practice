@@ -3,6 +3,17 @@ import EmberObject, { computed } from "@ember/object";
 
 let Band = EmberObject.extend({
   name: "",
+  language: "",
+
+  slug: computed("name", function () {
+    return this.get("name").dasherize();
+  }),
+});
+
+let Song = EmberObject.extend({
+  title: "",
+  rating: 0,
+  band: "",
 });
 
 export default Route.extend({
