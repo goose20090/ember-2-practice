@@ -1,5 +1,13 @@
-<ul class="list-group">
-  {{#each model as |band|}}
-    <li class="list-group-item">{{band.name}}</li>
-  {{/each}}
-</ul>
+<div class="col-md-4">
+  <ul class="list-group">
+    {{#each model as |band|}}
+      <li>
+        {{#link-to "bands.band.songs" band class="list-group-item band-link"}}
+          {{band.name}}
+          <span>></span>
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+  {{outlet}}
+</div>
